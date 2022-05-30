@@ -7477,3 +7477,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 .mfp-zoom-out-cur .mfp-image-holder .mfp-close {
   cursor: pointer !important;
 }
+
+.service-box{
+  min-height: 440px;
+}
