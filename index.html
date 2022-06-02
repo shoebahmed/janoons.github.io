@@ -29,8 +29,29 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- responsive Stylesheet -->
-    <link rel="stylesheet" href="assets/css/responsive.css">    
+    <link rel="stylesheet" href="assets/css/responsive.css">
 
+    <script type="text/javascript" src="assets/js/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('0K-nzNajj3aPDZ4Gv');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('service_janoon', 'template_78jo169', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
 </head>
 <body>
 
@@ -564,34 +585,34 @@
                 <img src="assets/img/others/21.png" alt="blog">
             </div>
             <div class="col-lg-7 offset-xl-1">
-                <form class="riyaqas-form-wrap mt-5 mt-lg-0">
+                <form id="contact-form" class="riyaqas-form-wrap mt-5 mt-lg-0">
                     <div class="row custom-gutters-16">
                         <div class="col-md-6">
                             <div class="single-input-wrap">
-                                <input type="text" class="single-input">
+                                <input id="name" name="name" type="text" class="single-input">
                                 <label>Name</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="single-input-wrap">
-                                <input type="text" class="single-input">
+                                <input id="email" name="email" type="text" class="single-input">
                                 <label>E-mail</label>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="single-input-wrap">
-                                <input type="text" class="single-input">
+                                <input id="subject" name="subject" type="text" class="single-input">
                                 <label>Subject</label>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="single-input-wrap">
-                                <textarea class="single-input textarea" cols="20"></textarea>
+                                <textarea id="message" name="message" class="single-input textarea" cols="20"></textarea>
                                 <label class="single-input-label">Message</label>
                             </div>
                         </div>
                         <div class="col-12">
-                            <a class="btn btn-red mt-0" href="#">Send</a>
+                            <input type="submit" class="btn btn-red mt-0" value="Send"/>
                         </div> 
                     </div>
                 </form>
