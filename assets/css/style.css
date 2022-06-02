@@ -7481,3 +7481,11 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 .service-box{
   min-height: 440px;
 }
+
+.alert-message{
+  color: var(--main-color-one) !important;
+}
+
+.hide-p{
+  display : none;
+}
