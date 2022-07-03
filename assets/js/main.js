@@ -164,7 +164,7 @@
         if ($clientCarousel.length > 0) {
             $clientCarousel.owlCarousel({
                 loop: true,
-                autoplay: false, //true if you want enable autoplay
+                autoplay: true, //true if you want enable autoplay
                 autoPlayTimeout: 1000,
                 dots: true,
                 nav: false,

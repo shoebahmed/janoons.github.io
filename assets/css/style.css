@@ -5851,7 +5851,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   line-height: 26px;
   letter-spacing: 0.3px;
   color: #5B6880;
-  margin-left: 20px;
+  /* margin-left: 20px; */
 }
 .client-slider .owl-dots {
   text-align: center;
